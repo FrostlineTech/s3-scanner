@@ -7,6 +7,24 @@ A read-focused S3 misconfiguration scanner:
 - Retrieves bucket ACLs
 - Logs to timestamped files in logs/ and optionally JSONL
 
+## Repository
+
+GitHub: <https://github.com/FrostlineTech/s3-scanner>
+
+## Get the code (Kali Linux)
+
+```bash
+# Clone the repo
+git clone https://github.com/FrostlineTech/s3-scanner.git
+
+# Enter the project directory
+cd s3-scanner
+
+# Verify Python & AWS CLI
+python3 --version
+aws --version
+```
+
 ## Requirements (Kali Linux)
 
 - Python 3 (preinstalled on Kali)
@@ -21,7 +39,7 @@ No AWS credentials required; scanner uses `--no-sign-request`.
 
 python3 s3_scanner.py
 
-# Enter a bucket name when prompted, or 'exit' to quit
+Note: Enter a bucket name when prompted, or 'exit' to quit.
 
 ## Non-Interactive Usage
 
@@ -48,6 +66,24 @@ python3 s3_scanner.py --bucket my-public-bucket --output /tmp/frostline
 
 Quiet mode:
 python3 s3_scanner.py --bucket my-public-bucket --quiet
+
+## Updating
+
+To get the latest changes:
+
+```bash
+git pull
+```
+
+## Buckets file format
+
+Provide one bucket name per line. Example `buckets.txt`:
+
+```text
+public-bucket-one
+another-public-bucket
+corp-logs-archive
+```
 
 ## Outputs
 
